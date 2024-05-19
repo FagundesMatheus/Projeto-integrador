@@ -1,5 +1,26 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../images/login-background.png') no-repeat center top;
+    background-size: 100% 80%;
+}
 
-
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(251, 251, 251); /* Cor de fundo cinza com opacidade */
+    padding: 80px;
+    border-radius: 10px; /* Opcional: bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+    width: 300px
+}
 .input-text {
     display: flex;
     flex-direction: column;
@@ -13,6 +34,26 @@
     align-items: center;
     justify-content: center;
     height: 50vw;
+    flex-direction: column;
 }
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 150%;
+}
+
+/*#form-login input[type="text"],
+#form-login input[type="password"] {
+    padding: 15px; /* Aumenta o padding dos inputs */
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 150%;
+    box-sizing: border-box;
+    font-size: 16px; /* Aumenta o tamanho da fonte dos inputs */
+    margin-left: -25%; /* Margem esquerda negativa de -25% */
+    margin-right: -25%;
+} 
 
 

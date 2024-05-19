@@ -7,16 +7,17 @@
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <form class="form-center">
-        <div>
-            <label for="cpf" class="input-text">CPF:</label>
-            <input type="text" name="FieldCPF" id="cpf-input" placeholder="000.000.000-00" maxlength="14">
-        </div>
-        <div>
-            <label for="password" class="input-text">password:</label>
-            <input type="text" name="FieldPassword" id="password-input" maxlength="14">
-        </div>
-    </form>
+    <div>
+        <form class="form-container" id="form-login">
+            <div class="input-container">
+                <label for="cpf" class="input-text">CPF:</label>
+                <input type="text" name="FieldCPF" id="cpf-input" placeholder="000.000.000-00" maxlength="14">
+                <b></b>
+                <label for="password" class="input-text">Senha:</label>
+                <input type="password" name="FieldPassword" id="password-input">
+            </div>
+        </form>
+    </div>
     <script src="./js/scripts.js"></script>
 </body>
 </html>
