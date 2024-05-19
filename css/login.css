@@ -15,11 +15,11 @@ body, html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(251, 251, 251); /* Cor de fundo cinza com opacidade */
-    height: 50px; /* Defina a altura desejada */
-    padding: 80px; /* Reduza o preenchimento interno */
-    border-radius: 10px; /* Opcional: bordas arredondadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+    background-color: rgb(251, 251, 251); 
+    height: 110px; 
+    padding: 80px;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     width: 300px
 }
 .input-text {
@@ -41,11 +41,11 @@ body, html {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-    width: 135%;
-    margin-top: 90px;
+    width: 130%;
+    margin-top: 50px;
 }
 #form-login input[type="text"],
-#form-login input[type="password"] {
+#form-login input[type="password"], .button {
     padding: 15px;
     margin-top: 1px;
     border: 1px solid #ccc;
@@ -54,20 +54,9 @@ body, html {
     font-size: 16px;
     margin-bottom: 20px;
 }
-.button-container {
-    width: 150%;
-}
-
 .button {
-    padding: 15px;
-    background-color: #007bff; /* Cor de fundo do botão */
-    color: white; /* Cor do texto do botão */
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    width: 100%; /* Tamanho igual ao dos inputs */
-    margin-top: 15px; /* Adiciona uma margem superior para empurrar o botão para baixo */
+    background-color: #007bff; 
+    color: white;
 }
 
 

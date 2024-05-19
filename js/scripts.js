@@ -1,4 +1,3 @@
-// cpf-mask.js
 
 // Função para formatar o CPF
 function formatCPF(value) {
