@@ -1,45 +1,55 @@
 package main
 
 import (
-	"encoding/json"
-	"fmt"
-	"net/http"
+    "fmt"
+    "log"
+    "net/http"
+    "html/template"
 )
 
-type LoginData struct {
-	CPF      string `json:"cpf"`
-	Password string `json:"password"`
-}
-
-func loginHandler(w http.ResponseWriter, r *http.Request) {
-	// Verifica se o método da requisição é POST
-	if r.Method != http.MethodPost {
-		http.Error(w, "Método não permitido", http.StatusMethodNotAllowed)
-		return
-	}
-
-	// Decodifica os dados do JSON recebido
-	var data LoginData
-	err := json.NewDecoder(r.Body).Decode(&data)
-	if err != nil {
-		http.Error(w, "Erro ao decodificar JSON", http.StatusBadRequest)
-		return
-	}
-
-	// (Adicione aqui a lógica de autenticação)
-	fmt.Fprintf(w, "Dados recebidos: CPF=%s, Senha=%s", data.CPF, data.Password)
-}
-
 func main() {
-	http.Handle("/css/", http.StripPrefix("/css/", http.FileServer(http.Dir("css"))))
-	// Configura o manipulador para servir um arquivo HTML quando a rota raiz for acessada
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "index.html")
-	})
+    http.HandleFunc("/", serveIndex)
+    http.HandleFunc("/login", handleLogin)
+    http.HandleFunc("/home", serveHome)
+    http.Handle("/css/", http.StripPrefix("/css/", http.FileServer(http.Dir("./css"))))
+    http.Handle("/js/", http.StripPrefix("/js/", http.FileServer(http.Dir("./js"))))
+    http.Handle("/images/", http.StripPrefix("/images/", http.FileServer(http.Dir("./images"))))
 
-	// Configura o manipulador para lidar com as solicitações de login
-	http.HandleFunc("/login", loginHandler)
+    log.Println("Server started on :8080")
+    log.Fatal(http.ListenAndServe(":8080", nil))
+}
 
-	// Inicia o servidor na porta 8080
-	http.ListenAndServe(":8080", nil)
+func serveIndex(w http.ResponseWriter, r *http.Request) {
+    tmpl, err := template.ParseFiles("index.html")
+    if err != nil {
+        http.Error(w, err.Error(), http.StatusInternalServerError)
+        return
+    }
+    tmpl.Execute(w, nil)
+}
+
+func handleLogin(w http.ResponseWriter, r *http.Request) {
+    if r.Method != http.MethodPost {
+        http.Error(w, "Invalid request method", http.StatusMethodNotAllowed)
+        return
+    }
+
+    cpf := r.FormValue("FieldCPF")
+    password := r.FormValue("FieldPassword")
+
+    fmt.Println("CPF:", cpf)
+    fmt.Println("Password:", password)
+
+    // Enviar uma resposta indicando que a página deve ser redirecionada
+    w.Header().Set("Content-Type", "text/plain")
+    w.Write([]byte("redirected"))
+}
+
+func serveHome(w http.ResponseWriter, r *http.Request) {
+    tmpl, err := template.ParseFiles("home.html")
+    if err != nil {
+        http.Error(w, err.Error(), http.StatusInternalServerError)
+        return
+    }
+    tmpl.Execute(w, nil)
 }

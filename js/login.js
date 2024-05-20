@@ -1,41 +1,41 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('form-login');
-    
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Impede o envio padrão do formulário
+document.getElementById('form-login').addEventListener('submit', function(event) {
+    event.preventDefault(); // Impede o comportamento padrão de recarregar a página
 
-        // Captura os valores dos campos do formulário
-        const cpf = document.getElementById('cpf-input').value;
-        const password = document.getElementById('password-input').value;
+    const cpf = document.getElementById('cpf-input').value;
+    const password = document.getElementById('password-input').value;
 
-        // Cria um objeto com os dados do formulário
-        const formData = {
-            cpf: cpf,
-            password: password
-        };
+    if (cpf.length < 14) {
+        alert("Digite um cpf válido")
+        return
+    }
+    if (password == ""){
+        alert("Digite uma senha")
+        return
+    }
 
-        // Faz a requisição POST para o backend
-        fetch('http://localhost:8080/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
+    fetch('/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+            'FieldCPF': cpf,
+            'FieldPassword': password
         })
-        .then(response => {
-            if (response.ok) {
-                return response.text(); // ou response.json() se o servidor retornar JSON
-            } else {
-                throw new Error('Erro na requisição');
-            }
-        })
-        .then(data => {
-            console.log('Sucesso:', data);
-            // Redireciona para a outra página HTML após sucesso
-            window.location.href = 'main.html'; // substitua 'pagina_de_sucesso.html' pelo caminho da sua página de sucesso
-        })
-        .catch((error) => {
-            console.error('Erro:', error);
-        });
-    });
+    })
+    .then(response => {
+        if (response.ok) { // Verifica se a resposta do servidor é bem-sucedida
+            return response.text();
+        }
+        throw new Error('Network response was not ok.');
+    })
+    .then(data => {
+        // Verifica se há uma URL de redirecionamento na resposta
+        if (data.includes('redirected')) {
+            window.location.href = '/home';
+        } else {
+            console.log(data);
+        }
+    })
+    .catch(error => console.error('Error:', error));
 });
