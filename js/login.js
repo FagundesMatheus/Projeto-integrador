@@ -1,4 +1,4 @@
-document.getElementById('form-login').addEventListener('submit', function(event) {
+document.getElementById('form-login').addEventListener('submit', function (event) {
     event.preventDefault(); // Impede o comportamento padrão de recarregar a página
 
     const cpf = document.getElementById('cpf-input').value;
@@ -8,10 +8,15 @@ document.getElementById('form-login').addEventListener('submit', function(event)
         alert("Digite um cpf válido")
         return
     }
-    if (password == ""){
+    if (password == "") {
         alert("Digite uma senha")
         return
     }
+    window.location.href = "home.html";
+
+}
+    /*
+    CONEXÃO COM O BACKEND - IGNORADO POR HORA
 
     fetch('/login', {
         method: 'POST',

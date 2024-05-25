@@ -1,11 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="Login" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/sidebar.css">
 </head>
+
 <body>
-    <h1>Login realizado com sucesso!</h1>
+    <div class="sidebar">
+        <label class="sobrevidas-logo">Sobrevidas</label>
+        <button class="sidebar-button" type="button"><img src="images/home-icon.png" alt="Ícone">Página Inicial</button>
+        <button class="sidebar-button" type="button"><img src="images/addPacient-icon.png" alt="Ícone">Cadastrar Paciente</button>
+        <button class="sidebar-button" type="button"><img src="images/pacientList-icon.png" alt="Ícone">Consultar Paciente</button>
+        <button class="sidebar-button" type="button"><img src="images/updatePacient-icon.png" alt="Ícone">Atualizar dados</button>
+        <button class="sidebar-button" type="button"><img src="images/history-icon.png" alt="Ícone">Histórico</button>
+        <button class="sidebar-button" type="button"><img src="images/user-icon.png" alt="Ícone">Meu perfil</button>
+        <button class="logout-button" type="button"><img src="images/logout-icon.png" alt="Ícone">Log out</button>
+    </div>
+    <div class="top"></div>
+    <div class="content">
+    <div class="home-content">
+        <div class="new-div">
+            <button class="home-button" type="button" id="addPacient-button"></button>
+        </div>
+        <div class="new-div">
+            <button class="home-button" type="button" id="updatePacient-button"></button>
+            <button class="home-button" type="button" id="pacientList-button"></button>
+        </div>
+        <div class="new-div">
+            <button class="home-button" type="button" id="history-button"></button>
+            <button class="home-button" type="button" id="profile-button"></button>
+        </div>
+    </div>
+    </div>
 </body>
+
 </html>

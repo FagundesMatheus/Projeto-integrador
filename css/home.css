@@ -1,0 +1,33 @@
+
+.new-div {
+    flex-grow: 1; /* Ocupa todo o espaço disponível na linha */
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 26.74%;
+    margin-top: 1%;
+}
+.home-content {
+    width: 100%;
+    height: 100%;
+}
+.home-button {
+    width: calc(50% - 2px); /* Alterado de 50% para 45% */
+    height: 100%;
+    border-radius: 0px;
+    border-width: 1px;
+    box-shadow: none;
+    border-color: #54b6f3;
+    background-color: #56beff;
+    margin-top: 0px;
+    margin-right: 0%; /* Nova margem entre os botões */
+    border-radius: 20px;
+}
+
+.home-button:hover {
+    background-color: #86cbf6;
+}
+
+#addPacient-button{
+    width: 100%;
+    margin-top: 0%;
+}
