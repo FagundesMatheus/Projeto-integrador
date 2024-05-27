@@ -12,35 +12,34 @@ document.getElementById('form-login').addEventListener('submit', function (event
         alert("Digite uma senha")
         return
     }
-    window.location.href = "home.html";
+    window.location.href = 'home.html';
+})
+/*
+CONEXÃO COM O BACKEND - IGNORADO POR HORA
 
-}
-    /*
-    CONEXÃO COM O BACKEND - IGNORADO POR HORA
-
-    fetch('/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams({
-            'FieldCPF': cpf,
-            'FieldPassword': password
-        })
+fetch('/login', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: new URLSearchParams({
+        'FieldCPF': cpf,
+        'FieldPassword': password
     })
-    .then(response => {
-        if (response.ok) { // Verifica se a resposta do servidor é bem-sucedida
-            return response.text();
-        }
-        throw new Error('Network response was not ok.');
-    })
-    .then(data => {
-        // Verifica se há uma URL de redirecionamento na resposta
-        if (data.includes('redirected')) {
-            window.location.href = '/home';
-        } else {
-            console.log(data);
-        }
-    })
-    .catch(error => console.error('Error:', error));
-});
+})
+.then(response => {
+    if (response.ok) { // Verifica se a resposta do servidor é bem-sucedida
+        return response.text();
+    }
+    throw new Error('Network response was not ok.');
+})
+.then(data => {
+    // Verifica se há uma URL de redirecionamento na resposta
+    if (data.includes('redirected')) {
+        window.location.href = '/home';
+    } else {
+        console.log(data);
+    }
+})
+.catch(error => console.error('Error:', error));
+});*/

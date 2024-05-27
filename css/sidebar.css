@@ -1,29 +1,29 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%; /* Garantir que html e body ocupem 100% da altura */
+    height: 100%; 
     background-color: #fffafa;
 }
 
 body {
     display: flex;
-    flex-direction: column; /* Organizar os elementos verticalmente */
+    flex-direction: column;
     overflow: hidden;
 }
 
 .sidebar {
     width: 250px;
     background-color: #ffffff;
-    height: 100%; /* Sidebar ocupa 100% da altura do body */
-    position: fixed; /* Fixar a posição da sidebar */
+    height: 100%; 
+    position: fixed; 
 }
 
 
 
 .content {
     display: flex;
-    flex-grow: 1; /* Ocupar o restante do espaço disponível */
-    margin-left: 250px; /* Compensar a largura da sidebar */
+    flex-grow: 1;
+    margin-left: 250px;
     overflow: auto;
     flex-direction: column;
     height: 100vh;
@@ -40,8 +40,8 @@ body {
     margin-top: 10px;
 }
 .sidebar-button:hover, .logout-button:hover {
-    background-color: #f6f6f6; /* Cor do botão ao passar o mouse */
-    color: #000000; /* Cor do texto ao passar o mouse */
+    background-color: #f6f6f6;
+    color: #000000; 
     border-radius: 5px;
 }
 .logout-button {
@@ -50,15 +50,15 @@ body {
     text-align: left;
     margin-left: 30px;
     border: none;
-    background: none; /* Remover background se necessário */
+    background: none; 
 
     align-items: center;
 }
 
 .sidebar-button img, .logout-button img {
-    width: 20px; /* Defina o tamanho do ícone conforme necessário */
-    height: 20px; /* Defina o tamanho do ícone conforme necessário */
-    margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+    width: 20px; 
+    height: 20px;
+    margin-right: 8px; 
     position: relative;
     top: 5px;
 }
@@ -74,11 +74,12 @@ body {
 }
 .top {
     height: 10vh;
-    width: calc(100% - 250px); /* Largura restante */
-    margin-left: 250px; /* Compensar a largura da sidebar */
-    background-color: #ccc; /* Apenas para visualização */
+    width: calc(100% - 250px); 
+    margin-left: 250px;
+    background-color: #ccc; 
 
 
+    
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -86,20 +87,20 @@ body {
 }
 
 .left-image {
-    width: 50px; /* Ajuste conforme necessário */
-    height: auto; /* Manter proporções */
-    margin-right: 10px; /* Espaçamento entre a imagem e o texto */
+    width: 50px; 
+    height: auto;
+    margin-right: 10px; 
 }
 
 .welcome-text {
     font-size: 16px;
     font-weight: bold;
-    margin: 0; /* Remover margens padrão */
+    margin: 0;
 }
 
 .right-image {
-    width: 40px; /* Ajuste conforme necessário */
-    height: 40px; /* Manter proporções */
-    margin-left: auto; /* Empurrar a imagem para a direita */
+    width: 40px; 
+    height: 40px;
+    margin-left: auto;
     margin-right: 20px;
 }

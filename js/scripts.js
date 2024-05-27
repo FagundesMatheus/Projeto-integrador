@@ -29,3 +29,6 @@ let cpfInput = document.getElementById('cpf-input');
 
 // Adiciona um ouvinte de eventos de entrada ao campo de entrada do CPF
 cpfInput.addEventListener('input', applyCPFFormat);
+
+
+
