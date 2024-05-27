@@ -18,12 +18,7 @@ body {
     position: fixed; /* Fixar a posição da sidebar */
 }
 
-.top {
-    height: 10vh;
-    width: calc(100% - 250px); /* Largura restante */
-    margin-left: 250px; /* Compensar a largura da sidebar */
-    background-color: #ccc; /* Apenas para visualização */
-}
+
 
 .content {
     display: flex;
@@ -77,4 +72,34 @@ body {
     font-size: 24px;
     font-weight: bold
 }
+.top {
+    height: 10vh;
+    width: calc(100% - 250px); /* Largura restante */
+    margin-left: 250px; /* Compensar a largura da sidebar */
+    background-color: #ccc; /* Apenas para visualização */
 
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+}
+
+.left-image {
+    width: 50px; /* Ajuste conforme necessário */
+    height: auto; /* Manter proporções */
+    margin-right: 10px; /* Espaçamento entre a imagem e o texto */
+}
+
+.welcome-text {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0; /* Remover margens padrão */
+}
+
+.right-image {
+    width: 40px; /* Ajuste conforme necessário */
+    height: 40px; /* Manter proporções */
+    margin-left: auto; /* Empurrar a imagem para a direita */
+    margin-right: 20px;
+}
