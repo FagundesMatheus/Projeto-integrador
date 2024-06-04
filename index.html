@@ -5,19 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="./css/login.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
 <body>
     <div>
-        <form class="form-container" id="form-login" action="/login" method="post">
+        <div class="teste">
+            <label id="login-text">LOGIN</label>
+        </div>
+        <div class="form-container" id="form-login" action="/login" method="post">
+            
             <div class="input-container">
                 <label for="cpf-input" class="input-text">CPF:</label>
                 <input type="text" name="FieldCPF" id="cpf-input" placeholder="000.000.000-00" maxlength="14">
                 <b></b>
                 <label for="password-input" class="input-text">Senha:</label>
                 <input type="password" name="FieldPassword" id="password-input">
-                <button type="submit" class="button">Enviar</button>
             </div>
-        </form>
+            
+        </div>
+        <div class="submit">
+            <button type="submit" class="button">Entrar</button>
+        </div>
     </div>
     <script src="./js/scripts.js"></script>
     <script src="./js/login.js"></script>
