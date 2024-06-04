@@ -2,6 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%; 
+    width: 100%;
     background-color: #fffafa;
 }
 
@@ -16,6 +17,9 @@ body {
     background-color: #ffffff;
     height: 100%; 
     position: fixed; 
+    border-color: white;
+    border-right: black;
+    border-style: solid;
 }
 
 
@@ -27,7 +31,7 @@ body {
     overflow: auto;
     flex-direction: column;
     height: 100vh;
-    margin-top: 5%;
+    background-color: #041E49;
 }
 .sidebar-button{
     display: block;
@@ -76,7 +80,7 @@ body {
     height: 10vh;
     width: calc(100% - 250px); 
     margin-left: 250px;
-    background-color: #ccc; 
+    background-color: #ffffff; 
 
 
     
